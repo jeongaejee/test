@@ -1,0 +1,2 @@
+import as streamlit
+st.image("https://giphy.com/gifs/art-animation-drawing-l44QtQcQ0JUozPmve")
