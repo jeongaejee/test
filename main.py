@@ -1,1 +1,53 @@
+import streamlit as st
+
+# 🎨 페이지 설정
+st.set_page_config(
+    page_title="MBTI Career Match 💼✨",
+    page_icon="🌈",
+    layout="centered"
+)
+
+# 🎉 제목 영역
+st.markdown("""
+    <h1 style='text-align: center; color: #FF69B4;'>🌟 MBTI Career Matcher 🌟</h1>
+    <h3 style='text-align: center; color: #20B2AA;'>Find your dream job based on your personality! 💼💖</h3>
+""", unsafe_allow_html=True)
+
+# 🌈 MBTI별 추천 직업 목록
+mbti_careers = {
+    "INTJ": "🧠 Data Scientist, 🕵️‍♂️ Detective, 👨‍💻 Software Engineer",
+    "INTP": "🔬 Researcher, 📊 Analyst, 💡 Inventor",
+    "ENTJ": "👩‍💼 CEO, 📈 Consultant, 🎤 Public Speaker",
+    "ENTP": "📣 Marketer, 🧪 Innovator, 🎭 Actor",
+    "INFJ": "👩‍🏫 Teacher, 🧘 Therapist, ✍️ Writer",
+    "INFP": "🎨 Designer, 📚 Author, 🐶 Animal Caregiver",
+    "ENFJ": "🌟 Leader, 💬 Coach, 👩‍⚕️ Healthcare Worker",
+    "ENFP": "🎤 Performer, 🗺️ Travel Blogger, 🌱 Environmentalist",
+    "ISTJ": "👮 Police Officer, 🧾 Accountant, 🏦 Banker",
+    "ISFJ": "🧑‍🍳 Chef, 🧑‍⚕️ Nurse, 🧑‍🏫 Educator",
+    "ESTJ": "📊 Manager, 🏗️ Project Leader, 🧑‍⚖️ Judge",
+    "ESFJ": "🎉 Event Planner, 🧑‍🍼 Childcare Worker, 💁 Receptionist",
+    "ISTP": "🛠️ Mechanic, 🕹️ Game Developer, 🛫 Pilot",
+    "ISFP": "🎼 Musician, 📷 Photographer, 🎨 Artist",
+    "ESTP": "🚀 Entrepreneur, 🏅 Athlete, 🎬 Stunt Performer",
+    "ESFP": "🌈 Influencer, 🎭 Actor, 🎤 Singer"
+}
+
+# 🧩 사용자로부터 MBTI 입력받기
+mbti = st.selectbox("💫 What's your MBTI type?", list(mbti_careers.keys()))
+
+# 📢 결과 출력
+if mbti:
+    st.markdown(f"""
+    <div style='text-align: center; background-color: #FFE4E1; padding: 20px; border-radius: 15px;'>
+        <h2 style='color: #FF4500;'>💡 Recommended Careers for {mbti}:</h2>
+        <p style='font-size: 24px;'>{mbti_careers[mbti]}</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# 🎨 하단 푸터
+st.markdown("""
+    <hr>
+    <p style='text-align: center;'>Made with ❤️ by <b>MBTI Career Lab</b> 🌐 | Explore, Discover & Shine! ✨</p>
+""", unsafe_allow_html=True)
 
